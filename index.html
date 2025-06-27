@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télécharger Lmarket mobile- Faire des achats en ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #00cec9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        
+        
+   
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .screenshot {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .screenshot:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+        
+        .screenshot img {
+            width: 50%;
+            height: 50;
+            display: block;
+        }
+        
+        .details {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(0, 206, 201, 0.2);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .version {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .description {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature {
+            background: rgba(108, 92, 231, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        
+        .feature i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 3rem;
+            animation: slideUp 1s ease;
+        }
+        
+        .download-btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+            transition: all 0.3s;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.6);
+        }
+        
+        .download-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .security-note {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #ff4757;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .screenshot {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+                    <img src="20250624_102800.png" width="100" height="100" alt="logo de l'app">
+                
+            
+            <h1>Lmarket Mobile</h1>
+            <p class="subtitle">Découvrez notre application mobile, plus besoin d'aller sur notre site web. </p>
+        </header>
+         <div class="download-section">
+            <h2>Disponible maintenant</h2>
+            <p>Téléchargez la dernière version et commencez votre expérience premium</p>
+            
+            <div>
+                <a href="Lmarket.apk" download="Lmarket.apk" class="download-btn">
+                    <i class="fas fa-download"></i> Télécharger pour Android
+                </a>
+            </div>
+             
+             <div class="security-note">
+    <p><strong>Note de sécurité :</strong> Si Android bloque l'installation de l'application, c'est parce qu'elle ne provient pas du Play Store. Pour autoriser l'installation :</p>
+    <ul>
+        <li>Ouvrez <strong>Paramètres</strong></li>
+        <li>Allez dans <strong>Sécurité</strong> ou <strong>Confidentialité</strong></li>
+        <li>Trouvez l’option <strong>Sources inconnues</strong> ou <strong>Installer des apps inconnues</strong></li>
+        <li>Sélectionnez votre navigateur (Chrome, Opera, etc.)</li>
+        <li>Activez <strong>Autoriser depuis cette source</strong></li>
+    </ul>
+    <p>✅ <strong>Lmarket</strong> est 100% sécurisé, sans virus, ni logiciel malveillant.</p>
+</div>
+             <h2><strong> Lmarket pour IOS sera bientôt disponible.</strong></h2><p>Toute fois vous pouvez:</p>
+             <div class="add-to-home-ios" style="background: linear-gradient(45deg, var(--primary), var(--accent)); border: 1px solid #ffeeba; padding: 15px; border-radius: 10px; color: White; font-family: sans-serif;">
+  <strong>Ajouter Lmarket à l'écran d'accueil</strong>
+  <ol>
+    <li>Ouvrez <strong>Safari</strong></li>
+    <li>Appuyez sur l’icône <strong>Partager</strong> <span style="font-size: 1.2em;">📤</span> en bas de l’écran</li>
+    <li>Faites défiler puis cliquez sur <strong>« Sur l’écran d’accueil »</strong></li>
+    <li>Appuyez sur <strong>« Ajouter »</strong> en haut à droite</li>
+  </ol>
+  <p><strong>Et voilà, c’est installé comme une application ! 🚀</strong></p>
+</div><br>
+             <div>
+                <a href="https://lmarket.netlify.app"  class="download-btn">
+                     Visiter le site
+                </a>
+            </div>           
+        </div> <br>
+        
+        <div class="app-container">
+            <div class="screenshot">
+                <!-- Remplacez par vos captures d'écran -->
+                <img src="Screenshot_20250624-102225.jpg" alt="Capture d'écran de l'application">
+            </div>
+            
+            <div class="screenshot">
+                <img src="Screenshot_20250624-102331.jpg" alt="Capture d'écran de l'application">
+            </div>
+            
+            <div class="details">
+                <div class="badges">
+                    
+                    <div class="badge">
+                        <i class="fas fa-bolt"></i> Ultra Rapide
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i> Sécurisé
+                    </div>
+                </div>
+                
+                <div class="version">Version 1.0.0.0 -  578kb </div>
+                
+                <div class="description">
+                    <p>Lmarket mobile révolutionne votre façon de naviguer sur notre plateforme, Profitez d'une rapidité incroyable, d'une interface intuitive, et de performances optimisées pour votre appareil mobile.</p>
+                    
+                    <p>Avec cette application :</p>
+                    <ul>
+                        <li>Nouvelle interface utilisateur futuriste</li>
+                        <li>Temps de chargement réduit de 40%</li>
+                        <li>Plus rapide que sur le site web</li>
+                    </ul>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Performances optimisées</span>
+                    </div>
+      
+                    <div class="feature">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Synchronisation en temps réel</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lock"></i>
+                        <span>Chiffrement des données</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+        <footer>
+            <p>© 2025 Lmarket. Tous droits réservés.</p>
+            <p>Contact : lmarketorg01@gmail.com | Politique de confidentialité</p>
+        </footer>
+    </div>
+</body>
+</html>
